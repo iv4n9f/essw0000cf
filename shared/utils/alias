@@ -1,0 +1,2 @@
+alias ip4='ip -br -4 -c a'
+alias cat='batcat'

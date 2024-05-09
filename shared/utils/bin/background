@@ -1,0 +1,16 @@
+#!/bin/bash
+
+lan="$(ip -br -4 a | grep UP | sed 's/  */ /g' | cut -d " " -f 3 | cut -d "/" -f 1)"
+wan="$(curl -s ifconfig.me)"
+
+cat > "$HOME/Pictures/data.pango" <<EOF
+<markup>
+
+$lan
+$wan
+
+</markup>
+EOF
+
+pango-view --background="#000000" --foreground="#FFFFFF" --font="Hack Nerd Font" --markup --gravity=east --width=1920 --height=1080 -qo "$HOME/Pictures/wallpaper.png" "$HOME/Pictures/data.pango"
+feh --bg-fill "$HOME/Pictures/wallpaper.png"
