@@ -17,12 +17,12 @@ else
     echo "yay is already installed."
 fi
 
-# Convert scripts to Unix format
-dos2unix $dir/../shared/bspwm/scripts/*
-
 # List of packages to install on Arch Linux
 packages="bspwm sxhkd polybar feh rofi jq gnome-terminal xclip dconf bat nitrogen pango x-server picom lightdm-gtk-greeter dos2unix wget unzip"
 pacman -S --noconfirm $packages
+
+# Convert scripts to Unix format
+dos2unix $dir/../shared/bspwm/scripts/*
 
 # Copy and set permissions for configuration files
 cp -r $dir/../shared/bspwm $HOME/.config/

@@ -5,14 +5,14 @@ dir=$1
 shell=$(echo $SHELL | rev | cut -d "/" -f 1 | rev)
 user=$(whoami)
 
-# Convert scripts to Unix format
-dos2unix $dir/../shared/bspwm/scripts/*
-
 # List of packages to install
 packages="bspwm sxhkd polybar feh rofi jq gnome-terminal xclip dconf-cli bat nitrogen libpango1.0-dev compton"
 
 # Install packages
 sudo apt-get install $packages -y
+
+# Convert scripts to Unix format
+dos2unix $dir/../shared/bspwm/scripts/*
 
 # Copy and configure configuration files
 cp -r $dir/../shared/bspwm $HOME/.config/
