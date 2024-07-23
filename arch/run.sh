@@ -56,4 +56,5 @@ sudo chmod 775 /usr/bin/set_target
 
 # Execute additional scripts
 /usr/bin/set_target 8.8.8.8
+chmod +x $dir/../shared/utils/gnome-terminal.sh
 $dir/../shared/utils/gnome-terminal.sh $dir/../shared/utils/gnome.conf
