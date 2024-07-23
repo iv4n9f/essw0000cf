@@ -21,7 +21,7 @@ fi
 dos2unix $dir/../shared/bspwm/scripts/*
 
 # List of packages to install on Arch Linux
-packages="bspwm sxhkd polybar feh rofi jq gnome-terminal xclip dconf bat nitrogen pango compton x-server lightdm-gtk-greeter wget unzip"
+packages="bspwm sxhkd polybar feh rofi jq gnome-terminal xclip dconf bat nitrogen pango compton x-server lightdm-gtk-greeter dos2unix wget unzip"
 pacman -S --noconfirm $packages
 
 # Copy and set permissions for configuration files
