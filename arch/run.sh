@@ -19,7 +19,7 @@ fi
 
 # List of packages to install on Arch Linux
 packages="bspwm sxhkd polybar feh rofi jq gnome-terminal xclip dconf bat nitrogen pango x-server picom lightdm-gtk-greeter dos2unix wget unzip"
-pacman -S --noconfirm $packages
+sudo pacman -S --noconfirm $packages
 
 # Convert scripts to Unix format
 dos2unix $dir/../shared/bspwm/scripts/*
