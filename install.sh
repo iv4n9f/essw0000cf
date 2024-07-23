@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ "$(id -u)" == "0" ]; then
-    echo "This script must be run as sudo user" >&2
+    echo "This script must not be run as root" >&2
     exit 1
 fi
 
@@ -11,18 +11,32 @@ sudo uname -a
 
 if [ -f /etc/os-release ]; then
     . /etc/os-release
-    if [ "$ID" = "kali" ]; then
-        system="kali"
-    elif [ "$ID" = "ubuntu" ]; then
-        system="ubuntu"
-    else
-        system="Unknown"
-    fi
+    case "$ID" in
+        kali)
+            system="kali"
+            ;;
+        ubuntu)
+            system="ubuntu"
+            ;;
+        arch)
+            system="arch"
+            ;;
+        *)
+            system="Unknown"
+            echo "Warning: Unable to detect the operating system"
+            ;;
+    esac
 else
     echo "Warning: Unable to detect the operating system"
     system="Unknown"
 fi
 
-folder=$dir/$system/
-$dir/$system/run.sh $folder
+folder="$dir/$system"
+run_script="$folder/run.sh"
 
+if [ -f "$run_script" ]; then
+    bash "$run_script" "$folder"
+else
+    echo "Error: The script $run_script does not exist" >&2
+    exit 1
+fi
