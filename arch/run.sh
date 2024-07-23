@@ -21,7 +21,7 @@ fi
 dos2unix $dir/../shared/bspwm/scripts/*
 
 # List of packages to install on Arch Linux
-packages="bspwm sxhkd polybar feh rofi jq gnome-terminal xclip dconf bat nitrogen pango compton x-server lightdm-gtk-greeter dos2unix wget unzip"
+packages="bspwm sxhkd polybar feh rofi jq gnome-terminal xclip dconf bat nitrogen pango x-server picom lightdm-gtk-greeter dos2unix wget unzip"
 pacman -S --noconfirm $packages
 
 # Copy and set permissions for configuration files
@@ -32,7 +32,7 @@ cp -r $dir/../shared/polybar $HOME/.config/
 cp /etc/X11/xinit/xinitrc $HOME/.xinitrc
 echo "exec bspwm" > $HOME/.xinitrc
 chmod +x $HOME/.xinitrc
-cp -r $dir/../shared/compton $HOME/.config/
+cp -r $dir/../shared/picom $HOME/.config/
 
 # Download and install Hack fonts
 mkdir -p $HOME/Downloads
