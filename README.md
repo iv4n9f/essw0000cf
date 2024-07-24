@@ -2,28 +2,39 @@
 <h3 align="center"> Linux Environment Configuration </h3>
 
 > [!NOTE]
-> The content of this repository may change over time. We recommend that you review it carefully to confirm that it is suitable for your systems and conditions.
-
+> The content of this repository is under development and is subject to change. Please verify that the content is compatible with your system and requirements.
 > [!IMPORTANT]
-> The code is open source and you can use it as you like and check it on your system. All the tests that have been done are confirmed in the "TEST" section so you can know in advance on which systems it is compatible.
-
-> [!IMPORTANT]
-> The WAN module enabled in polybar by default shows your public IP on the screen. A function will be added later to hide it easily, but for now, keep it in mind when taking screenshots or sharing screenshots.
-> The purpose of this module is to know where your traffic is going when you are connected through a VPN and that is why it is enabled by default. However, if you don't have a VPN, it can be dangerous to share that information.
-> To disable it, just go to the file `~/.config/polybar/config.ini` and delete `wan` from line 49.
+> By default, the WAN module in Polybar displays your public IP address on the screen. We plan to add an option to hide it in future updates, but for now, please be cautious when taking or sharing screenshots, as it may reveal sensitive information.
+> The WAN module is enabled by default to help you monitor your traffic's destination when connected through a VPN. However, if you are not using a VPN, sharing this information could pose a security risk.
+> To disable the WAN module, open the file ~/.config/polybar/config.ini and remove wan from line 49.
 
 <h3 align="center"> Description </h3>
 
 This repository contains my personal Linux desktop configuration, primarily tested and supported on Kali Linux and Arch Linux.
 
-<h3 align="center"> Requirements </h3>
+<h3 align="center"> Content & Dependencies </h3>
 
-The following requirements are needed for a successful installation:
+Content
+This repository includes a setup script for configuring a Linux desktop environment on Linux. The script performs the following tasks:
 
-- One of the supported systems (Kali Linux or Arch Linux)
-- Internet connection
-- Sudo privileges
-- `git` installed on your system
+Installation of Yay: Installs yay, an AUR helper for managing packages from the Arch User Repository. (On Arch system)
+System Update: Updates system packages to their latest versions.
+Package Installation: Installs essential packages for the desktop environment, including:
+Window managers and utilities (bspwm, sxhkd, polybar, feh, rofi, etc.).
+Configuration Setup:
+Configures bspwm, sxhkd, polybar, and picom.
+Sets up LightDM for display management.
+Installs and configures Hack Nerd Fonts for better terminal and editor appearance.
+Utility Scripts: Adds shell aliases and utility scripts to /usr/bin.
+
+Requirements
+To run the script, you need:
+Supported System
+Internet Connection: Required for downloading packages and updates.
+Sudo Privileges: Necessary to install packages and modify system files.
+Git: Required to clone the repository.
+Yay: An AUR helper; the script will install it if it's not already present.
+Hack Nerd Fonts: Included in the setup to enhance font support for terminals and code editors.
 
 <h3 align="center"> Installation </h3>
 
@@ -45,22 +56,6 @@ Or use the one-liner:
 cd ~ && mkdir rep && cd rep && git clone https://github.com/iv4n9f/essw0000cf && cd essw0000cf && chmod +x install.sh && ./install.sh
 ```
 
-<h3 align="center"> Functionality </h3>
-The installation script performs the following tasks:
-
-Yay Installation: Installs yay if not already installed. Yay is an AUR helper to install packages from the Arch User Repository.
-System Update: Updates the system using pacman.
-Package Installation: Installs various packages necessary for the desktop environment, including:
-bspwm, sxhkd, polybar, feh, rofi, jq, gnome-terminal, xclip, dconf, bat, nitrogen, pango, xorg-server, xorg-xinit, picom, lightdm-gtk-greeter, dos2unix, wget, unzip, gnome-themes-standard.
-Configuration Setup:
-Converts scripts to Unix format.
-Copies and sets permissions for configuration files for bspwm, sxhkd, polybar, picom.
-Sets up bspwm to start with startx.
-Installs Hack fonts.
-Configures LightDM with GTK greeter.
-Aliases and Additional Scripts: Adds useful aliases to the shell configuration file and copies additional scripts to /usr/bin.
-LightDM Configuration: Enables and starts LightDM.
-
 <h3 align="center"> TEST </h3>
 This repository was successfully tested on:
 
@@ -73,3 +68,8 @@ Other Debian-based systems could be compatible but have not been tested.
 ![Login Screen](https://github.com/iv4n9f/essw0000cf/blob/main/images/login.png)
 ![Desktop Screen](https://github.com/iv4n9f/essw0000cf/blob/main/images/0001.png)
 ![Terminal Screen](https://github.com/iv4n9f/essw0000cf/blob/main/images/0002.png)
+
+
+<h3 align="center"> LICENSE </h3>
+
+This project is licensed under the MIT License - see the LICENSE(LICENSE) file for details.
