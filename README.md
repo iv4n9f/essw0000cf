@@ -73,7 +73,9 @@ cd ~ && mkdir rep && cd rep && git clone https://github.com/iv4n9f/essw0000cf &&
 ```
 
 <h3 align="center"> TEST </h3>
+
 This repository was successfully tested on:
+
 ```
 Arch Linux minimal installation
 Kali Linux
