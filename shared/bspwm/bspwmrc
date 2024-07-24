@@ -3,7 +3,8 @@
 sxhkd &
 wmname LG3D &
 ~/.config/polybar/launch.sh &
-~/.config/bspwm/scripts/background &
+feh --bg-fill $HOME/img/wallpaper.jpg
+# ~/.config/bspwm/scripts/background &
 compton --config $HOME/.config/compton/compton.conf &
 
 bspc config pointer_modifier mod1

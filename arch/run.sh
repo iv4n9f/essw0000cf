@@ -46,6 +46,8 @@ sudo mkdir -p /usr/share/fonts/Hack
 sudo cp *.ttf /usr/share/fonts/Hack/.
 cd $dir
 sudo cp $dir/../shared/utils/lightdm-gtk-greeter.conf /etc/lightdm/lightdm-gtk-greeter.conf
+sudo cp $dir/../shared/img $HOME/.
+
 
 # Add aliases to the shell configuration file
 cat $dir/../shared/utils/alias >> $HOME/.$(echo $shell)rc
