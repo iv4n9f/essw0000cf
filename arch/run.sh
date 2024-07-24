@@ -61,4 +61,4 @@ sudo chmod 775 /usr/bin/set_target
 chmod +x $dir/../shared/utils/gnome-terminal.sh
 $dir/../shared/utils/gnome-terminal.sh $dir/../shared/utils/gnome.conf
 
-sudo systemctl enable lightdm
+sudo systemctl enable lightdm && sudo systemctl start lightdm
