@@ -42,3 +42,14 @@ Or use the one-liner:
 ```
 cd ~ && mkdir rep && cd rep && git clone https://github.com/iv4n9f/essw0000cf && cd essw0000cf && chmod +x install.sh && ./install.sh
 ```
+
+<h3 align="center"> TEST </h3>
+
+This repository was succesfully tested on :
+
+```
+- Arch linux minimal installation
+- Kali linux
+```
+
+Other debian based systems could be compatible , but i dont tested it.
