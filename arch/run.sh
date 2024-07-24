@@ -17,8 +17,10 @@ else
     echo "yay is already installed."
 fi
 
+sudo pacman -Syu --noconfirm
+
 # List of packages to install on Arch Linux
-packages="bspwm sxhkd polybar feh rofi jq gnome-terminal xclip dconf bat nitrogen pango xorg-server picom lightdm-gtk-greeter dos2unix wget unzip"
+packages="bspwm sxhkd polybar feh rofi jq gnome-terminal xclip dconf bat nitrogen pango xorg-server xorg-xinit picom lightdm-gtk-greeter dos2unix wget unzip"
 sudo pacman -S --noconfirm $packages
 
 # Convert scripts to Unix format
@@ -58,3 +60,5 @@ sudo chmod 775 /usr/bin/set_target
 /usr/bin/set_target 8.8.8.8
 chmod +x $dir/../shared/utils/gnome-terminal.sh
 $dir/../shared/utils/gnome-terminal.sh $dir/../shared/utils/gnome.conf
+
+sudo systemctl enable lightdm
