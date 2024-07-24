@@ -27,9 +27,10 @@ sudo pacman -S --noconfirm $packages
 dos2unix $dir/../shared/bspwm/scripts/*
 
 # Copy and set permissions for configuration files
+chmod +x  $dir/../shared/bspwm/bspwmrc && chmod +x  $dir/../shared/bspwm/scripts/*
 cp -r $dir/../shared/bspwm $HOME/.config/
-chmod +x $HOME/.config/bspwm/scripts/*
 cp -r $dir/../shared/sxhkd $HOME/.config/
+chmod +x $dir/../shared/polybar/launch.sh && chmod +x $dir/../shared/polybar/modules/*
 cp -r $dir/../shared/polybar $HOME/.config/
 cp /etc/X11/xinit/xinitrc $HOME/.xinitrc
 echo "exec bspwm" > $HOME/.xinitrc
