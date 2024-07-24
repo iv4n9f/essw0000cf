@@ -3,6 +3,7 @@
 
 > [!NOTE]
 > The content of this repository is under development and is subject to change. Please verify that the content is compatible with your system and requirements.
+
 > [!IMPORTANT]
 > By default, the WAN module in Polybar displays your public IP address on the screen. We plan to add an option to hide it in future updates, but for now, please be cautious when taking or sharing screenshots, as it may reveal sensitive information.
 > The WAN module is enabled by default to help you monitor your traffic's destination when connected through a VPN. However, if you are not using a VPN, sharing this information could pose a security risk.
@@ -14,27 +15,42 @@ This repository contains my personal Linux desktop configuration, primarily test
 
 <h3 align="center"> Content & Dependencies </h3>
 
-Content
-This repository includes a setup script for configuring a Linux desktop environment on Linux. The script performs the following tasks:
+Content :
 
-Installation of Yay: Installs yay, an AUR helper for managing packages from the Arch User Repository. (On Arch system)
-System Update: Updates system packages to their latest versions.
-Package Installation: Installs essential packages for the desktop environment, including:
-Window managers and utilities (bspwm, sxhkd, polybar, feh, rofi, etc.).
-Configuration Setup:
-Configures bspwm, sxhkd, polybar, and picom.
-Sets up LightDM for display management.
-Installs and configures Hack Nerd Fonts for better terminal and editor appearance.
-Utility Scripts: Adds shell aliases and utility scripts to /usr/bin.
+```
+X-Server                    -   Provides the graphical server for the Linux desktop environment.
+LightDM Greeter             -   Sets up LightDM as the display manager with the GTK greeter.
+Hack Nerd Fonts             -   Installs Hack Nerd Fonts for improved terminal and editor appearance.
+bspwm                       -   A tiling window manager.
+sxhkd                       -   A hotkey daemon to manage keyboard shortcuts.
+polybar                     -   A fast and customizable status bar for X11.
+feh                         -   An image viewer and wallpaper setter.
+rofi                        -   A window switcher, application launcher, and more.
+jq                          -   A lightweight command-line JSON processor.
+gnome-terminal              -   A terminal emulator for GNOME.
+xclip                       -   A command-line interface to X selections.
+dconf                       -   A low-level configuration system.
+bat                         -   A cat clone with syntax highlighting.
+nitrogen                    -   A wallpaper setter.
+pango                       -   A library for text layout and rendering.
+xorg-server                 -   The X server for graphical operations.
+xorg-xinit                  -   Tool for initializing the X Window System.
+picom                       -   A lightweight compositor for X11.
+dos2unix                    -   A utility to convert text files from DOS to Unix format.
+wget                        -   A command-line utility to download files from the web.
+unzip                       -   A utility to extract compressed files.
+gnome-themes-standard       -   Standard themes for GNOME desktop environments.
+Additional Shell Scripts    -   Adds various utility scripts and aliases to /usr/bin.
+...
 
 Requirements
-To run the script, you need:
+
+```
 Supported System
-Internet Connection: Required for downloading packages and updates.
-Sudo Privileges: Necessary to install packages and modify system files.
-Git: Required to clone the repository.
-Yay: An AUR helper; the script will install it if it's not already present.
-Hack Nerd Fonts: Included in the setup to enhance font support for terminals and code editors.
+Internet Connection         -   Required for downloading packages and updates.
+Sudo Privileges             -   Necessary to install packages and modify system files.
+Git                         -   Required to clone the repository.
+```
 
 <h3 align="center"> Installation </h3>
 
@@ -72,4 +88,4 @@ Other Debian-based systems could be compatible but have not been tested.
 
 <h3 align="center"> LICENSE </h3>
 
-This project is licensed under the MIT License - see the LICENSE(LICENSE) file for details.
+This project is licensed under the MIT License - see the ![LICENSE](https://github.com/iv4n9f/essw0000cf/blob/main/LICENSE) file for details.
