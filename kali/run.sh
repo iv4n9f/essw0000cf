@@ -6,7 +6,7 @@ shell=$(echo $SHELL | rev | cut -d "/" -f 1 | rev)
 user=$(whoami)
 
 # List of packages to install
-packages="bspwm sxhkd polybar feh rofi jq gnome-terminal xclip dconf-cli bat nitrogen libpango1.0-dev compton"
+packages="bspwm sxhkd polybar feh rofi jq gnome-terminal xclip dconf-cli bat nitrogen libpango1.0-dev compton gnome-themes-standard"
 
 # Install packages
 sudo apt-get install $packages -y
@@ -32,6 +32,7 @@ unzip Hack.zip
 sudo mkdir -p /usr/share/fonts/Hack
 sudo cp *.ttf /usr/share/fonts/Hack/.
 cd $dir
+sudo cp $dir/../shared/utils/lightdm-gtk-greeter.conf /etc/lightdm/lightdm-gtk-greeter.conf
 
 # Add aliases to the shell configuration file
 cat $dir/../shared/utils/alias >> $HOME/.$(echo $shell)rc

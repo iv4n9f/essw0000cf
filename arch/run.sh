@@ -20,7 +20,7 @@ fi
 sudo pacman -Syu --noconfirm
 
 # List of packages to install on Arch Linux
-packages="bspwm sxhkd polybar feh rofi jq gnome-terminal xclip dconf bat nitrogen pango xorg-server xorg-xinit picom lightdm-gtk-greeter dos2unix wget unzip"
+packages="bspwm sxhkd polybar feh rofi jq gnome-terminal xclip dconf bat nitrogen pango xorg-server xorg-xinit picom lightdm-gtk-greeter dos2unix wget unzip gnome-themes-standard"
 sudo pacman -S --noconfirm $packages
 
 # Convert scripts to Unix format
@@ -45,6 +45,7 @@ unzip Hack.zip
 sudo mkdir -p /usr/share/fonts/Hack
 sudo cp *.ttf /usr/share/fonts/Hack/.
 cd $dir
+sudo cp $dir/../shared/utils/lightdm-gtk-greeter.conf /etc/lightdm/lightdm-gtk-greeter.conf
 
 # Add aliases to the shell configuration file
 cat $dir/../shared/utils/alias >> $HOME/.$(echo $shell)rc
