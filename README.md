@@ -7,7 +7,7 @@
 > [!IMPORTANT]
 > By default, the WAN module in Polybar displays your public IP address on the screen. We plan to add an option to hide it in future updates, but for now, please be cautious when taking or sharing screenshots, as it may reveal sensitive information.
 > The WAN module is enabled by default to help you monitor your traffic's destination when connected through a VPN. However, if you are not using a VPN, sharing this information could pose a security risk.
-> To disable the WAN module, open the file ~/.config/polybar/config.ini and remove wan from line 49.
+> To disable the WAN module, open the file `~/.config/polybar/config.ini` and remove `wan` from line 49.
 
 <h3 align="center"> Description </h3>
 
