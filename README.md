@@ -41,9 +41,9 @@ wget                        -   A command-line utility to download files from th
 unzip                       -   A utility to extract compressed files.
 gnome-themes-standard       -   Standard themes for GNOME desktop environments.
 Additional Shell Scripts    -   Adds various utility scripts and aliases to /usr/bin.
-...
+```
 
-Requirements
+Requirements :
 
 ```
 Supported System
