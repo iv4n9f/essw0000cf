@@ -88,4 +88,4 @@ Other Debian-based systems could be compatible but have not been tested.
 
 <h3 align="center"> LICENSE </h3>
 
-This project is licensed under the MIT License - see the ![LICENSE](https://github.com/iv4n9f/essw0000cf/blob/main/LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/iv4n9f/essw0000cf/blob/main/LICENSE) file for details.
