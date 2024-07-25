@@ -32,6 +32,12 @@ unzip Hack.zip
 sudo mkdir -p /usr/share/fonts/Hack
 sudo cp *.ttf /usr/share/fonts/Hack/.
 cd $dir
+cd $HOME/Downloads
+git clone https://github.com/lr-tech/rofi-themes-collection.git
+cd rofi-themes-collection
+mkdir -p ~/.local/share/rofi/themes/
+cp themes/* ~/.local/share/rofi/themes/
+cd $dir
 sudo cp $dir/../shared/utils/lightdm-gtk-greeter.conf /etc/lightdm/lightdm-gtk-greeter.conf
 
 # Add aliases to the shell configuration file
