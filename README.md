@@ -13,6 +13,32 @@
 
 This repository contains my personal Linux desktop configuration, primarily tested and supported on Kali Linux and Arch Linux.
 
+<h3 align="center"> Installation </h3>
+
+For installation, you can follow the instructions below:
+
+```bash
+cd ~
+mkdir rep
+cd rep
+git clone https://github.com/iv4n9f/essw0000cf
+cd essw0000cf
+chmod +x install.sh
+./install.sh
+```
+
+Or use the one-liner:
+
+```
+cd ~ && mkdir rep && cd rep && git clone https://github.com/iv4n9f/essw0000cf && cd essw0000cf && chmod +x install.sh && ./install.sh
+```
+
+<h3 align="center"> Technologies </h3>
+
+[![Technologies](https://skillicons.dev/icons?i=linux,bash)](https://skillicons.dev)
+[![Systems](https://skillicons.dev/icons?i=arch,kali)](https://skillicons.dev)
+
+
 <h3 align="center"> Content & Dependencies </h3>
 
 Content :
@@ -50,26 +76,6 @@ Supported System
 Internet Connection         -   Required for downloading packages and updates.
 Sudo Privileges             -   Necessary to install packages and modify system files.
 Git                         -   Required to clone the repository.
-```
-
-<h3 align="center"> Installation </h3>
-
-For installation, you can follow the instructions below:
-
-```bash
-cd ~
-mkdir rep
-cd rep
-git clone https://github.com/iv4n9f/essw0000cf
-cd essw0000cf
-chmod +x install.sh
-./install.sh
-```
-
-Or use the one-liner:
-
-```
-cd ~ && mkdir rep && cd rep && git clone https://github.com/iv4n9f/essw0000cf && cd essw0000cf && chmod +x install.sh && ./install.sh
 ```
 
 <h3 align="center"> TEST </h3>
