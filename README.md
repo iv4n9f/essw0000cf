@@ -1,6 +1,12 @@
 <h4 align="center"> ESSW0000CF </h4>
 <h3 align="center"> Linux Environment Configuration </h3>
 
+![Author](https://img.shields.io/badge/Author-iv4n9f-purple?style=plastic&logo=github&logoColor=white)
+![Version](https://img.shields.io/badge/Version-0.01-green?style=plastic&logo=git&logoColor=white)
+![Language](https://img.shields.io/badge/Language-Bash-blue?style=plastic&logo=stackedit&logoColor=white)
+![Status](https://img.shields.io/badge/Status-Working-yellow?style=plastic&logo=lineageos&logoColor=white)
+![License](https://img.shields.io/badge/License-OpenSource-cyan?style=plastic&logo=creativecommons&logoColor=white)
+
 > [!NOTE]
 > The content of this repository is under development and is subject to change. Please verify that the content is compatible with your system and requirements.
 
