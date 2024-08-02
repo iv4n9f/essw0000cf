@@ -35,8 +35,9 @@ cd ~ && mkdir rep && cd rep && git clone https://github.com/iv4n9f/essw0000cf &&
 
 <h3 align="center"> Technologies </h3>
 
-[![Technologies](https://skillicons.dev/icons?i=linux,bash)](https://skillicons.dev)
-[![Systems](https://skillicons.dev/icons?i=arch,kali)](https://skillicons.dev)
+[![Technologies](https://skillicons.dev/icons?i=linux,bash)]
+
+[![Systems](https://skillicons.dev/icons?i=arch,kali)]
 
 
 <h3 align="center"> Content & Dependencies </h3>
