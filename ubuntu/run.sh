@@ -11,7 +11,7 @@ sudo apt update && sudo apt upgrade -y
 sudo apt install -y git build-essential curl wget unzip dos2unix
 
 # Instalar paquetes necesarios en Ubuntu
-packages="bspwm sxhkd polybar feh rofi jq gnome-terminal xclip dconf-cli bat nitrogen pango xorg picom lightdm lightdm-gtk-greeter dos2unix wget unzip fonts-hack-ttf gnome-themes-extra"
+packages="bspwm sxhkd polybar feh rofi jq gnome-terminal xclip dconf-cli bat nitrogen xorg picom lightdm lightdm-gtk-greeter dos2unix wget unzip fonts-hack-ttf gnome-themes-extra"
 sudo apt install -y $packages
 
 # Convertir scripts a formato Unix
