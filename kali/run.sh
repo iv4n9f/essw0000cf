@@ -1,30 +1,39 @@
 #!/bin/bash
 
-# Define variables
 dir=$1
 shell=$(echo $SHELL | rev | cut -d "/" -f 1 | rev)
 user=$(whoami)
 
-# List of packages to install
-packages="bspwm sxhkd polybar feh rofi jq gnome-terminal xclip dconf-cli bat nitrogen libpango1.0-dev compton gnome-themes-standard"
+# Actualiza los paquetes del sistema
+sudo apt update && sudo apt upgrade -y
 
-# Install packages
-sudo apt-get install $packages -y
+# Listado de paquetes a instalar en Kali Linux, incluyendo xrdp para RDP
+packages="bspwm sxhkd polybar feh rofi jq gnome-terminal xclip dconf-cli bat nitrogen pango xorg lightdm-gtk-greeter dos2unix wget unzip gnome-themes-standard picom xrdp"
 
-# Convert scripts to Unix format
+sudo apt install -y $packages
+
+# Configurar xrdp en el puerto 5039
+sudo sed -i 's/3389/5039/g' /etc/xrdp/xrdp.ini
+
+# Habilitar y reiniciar xrdp
+sudo systemctl enable xrdp
+sudo systemctl restart xrdp
+
+# Convertir scripts al formato Unix
 dos2unix $dir/../shared/bspwm/scripts/*
 
-# Copy and configure configuration files
+# Copiar y establecer permisos para los archivos de configuración
+chmod +x  $dir/../shared/bspwm/bspwmrc && chmod +x  $dir/../shared/bspwm/scripts/*
 cp -r $dir/../shared/bspwm $HOME/.config/
-chmod +x $HOME/.config/bspwm/scripts/*
 cp -r $dir/../shared/sxhkd $HOME/.config/
+chmod +x $dir/../shared/polybar/launch.sh && chmod +x $dir/../shared/polybar/modules/*
 cp -r $dir/../shared/polybar $HOME/.config/
 cp /etc/X11/xinit/xinitrc $HOME/.xinitrc
 echo "exec bspwm" > $HOME/.xinitrc
 chmod +x $HOME/.xinitrc
-cp -r $dir/../shared/compton $HOME/.config/
+cp -r $dir/../shared/picom $HOME/.config/
 
-# Download and install Hack fonts
+# Descargar e instalar las fuentes Hack
 mkdir -p $HOME/Downloads
 cd $HOME/Downloads
 wget "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/Hack.zip"
@@ -39,18 +48,22 @@ mkdir -p ~/.local/share/rofi/themes/
 cp themes/* ~/.local/share/rofi/themes/
 cd $dir
 sudo cp $dir/../shared/utils/lightdm-gtk-greeter.conf /etc/lightdm/lightdm-gtk-greeter.conf
+sudo cp -r $dir/../shared/img $HOME/.
 
-# Add aliases to the shell configuration file
+# Agregar alias al archivo de configuración de la shell
 cat $dir/../shared/utils/alias >> $HOME/.$(echo $shell)rc
 
-# Convert additional scripts to Unix format and copy them to /usr/bin
+# Convertir scripts adicionales al formato Unix y copiarlos a /usr/bin
 dos2unix $dir/../shared/utils/bin/*
 sudo cp $dir/../shared/utils/bin/* /usr/bin/.
 
-# Set permissions for scripts in /usr/bin
+# Establecer permisos para los scripts en /usr/bin
 sudo chmod 775 /usr/bin/background
 sudo chmod 775 /usr/bin/set_target
 
-# Execute additional scripts
+# Ejecutar scripts adicionales
 /usr/bin/set_target 8.8.8.8
+chmod +x $dir/../shared/utils/gnome-terminal.sh
 $dir/../shared/utils/gnome-terminal.sh $dir/../shared/utils/gnome.conf
+
+sudo systemctl enable lightdm && sudo systemctl start lightdm
