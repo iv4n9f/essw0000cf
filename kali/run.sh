@@ -8,7 +8,7 @@ user=$(whoami)
 sudo apt update && sudo apt upgrade -y
 
 # Listado de paquetes a instalar en Kali Linux, incluyendo xrdp para RDP
-packages="bspwm sxhkd polybar feh rofi jq gnome-terminal xclip dconf-cli bat nitrogen pango xorg lightdm-gtk-greeter dos2unix wget unzip gnome-themes-standard picom xrdp"
+packages="bspwm sxhkd polybar feh rofi jq gnome-terminal xclip dconf-cli bat nitrogen xorg lightdm-gtk-greeter dos2unix wget unzip picom xrdp"
 
 sudo apt install -y $packages
 
