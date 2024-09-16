@@ -50,9 +50,6 @@ cd $dir
 sudo cp $dir/../shared/utils/lightdm-gtk-greeter.conf /etc/lightdm/lightdm-gtk-greeter.conf
 sudo cp -r $dir/../shared/img $HOME/.
 
-# Agregar alias al archivo de configuración de la shell
-cat $dir/../shared/utils/alias >> $HOME/.$(echo $shell)rc
-
 # Convertir scripts adicionales al formato Unix y copiarlos a /usr/bin
 dos2unix $dir/../shared/utils/bin/*
 sudo cp $dir/../shared/utils/bin/* /usr/bin/.
