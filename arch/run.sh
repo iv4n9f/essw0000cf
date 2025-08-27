@@ -1,8 +1,7 @@
 #!/bin/bash
 
 dir=$1
-shell=$(echo $SHELL | rev | cut -d "/" -f 1 | rev)
-user=$(whoami)
+shell=${SHELL##*/}
 
 # Install yay if not already installed
 if ! command -v yay &> /dev/null; then

@@ -1,8 +1,7 @@
 #!/bin/bash
 
 dir=$1
-shell=$(echo $SHELL | rev | cut -d "/" -f 1 | rev)
-user=$(whoami)
+shell=${SHELL##*/}
 
 # Actualiza los paquetes del sistema
 sudo apt update && sudo apt upgrade -y
