@@ -1,25 +1,20 @@
 #!/bin/bash
+set -euo pipefail
 
-if [ "$(id -u)" == "0" ]; then
+if [[ "$(id -u)" == "0" ]]; then
     echo "This script must not be run as root" >&2
     exit 1
 fi
 
-dir=$(pwd)
+dir=$(dirname "$(readlink -f "$0")")
 
 sudo uname -a
 
-if [ -f /etc/os-release ]; then
+if [[ -f /etc/os-release ]]; then
     . /etc/os-release
     case "$ID" in
-        kali)
-            system="kali"
-            ;;
-        ubuntu)
-            system="ubuntu"
-            ;;
-        arch)
-            system="arch"
+        kali|ubuntu|arch)
+            system="$ID"
             ;;
         *)
             system="Unknown"
@@ -34,9 +29,9 @@ fi
 folder="$dir/$system"
 run_script="$folder/run.sh"
 
-if [ -f "$run_script" ]; then
+if [[ -x "$run_script" ]]; then
     bash "$run_script" "$folder"
 else
-    echo "Error: The script $run_script does not exist" >&2
+    echo "Error: The script $run_script does not exist or is not executable" >&2
     exit 1
 fi
